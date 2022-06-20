@@ -1,36 +1,19 @@
-import { useCallback } from "react";
-import { topBannerLinks } from "../../data/global";
-import { Logo } from "../../components";
-import { Container, CustomInput, LinksContainer, TopHeaderContainer } from "./styles";
+import { useCallback, useState } from "react";
+import { message } from "antd";
+import { Header, Panel, Main } from "./components";
+import { Container } from "./styles";
 
 export const Home = () => {
-  const onSearch = useCallback(() => {
-    alert("Search!");
+  const onSearch = useCallback((content: string) => {
+    message.info(`Search: ${content}`);
   }, []);
+  const [tabKey, setTabKey] = useState("Overview");
 
   return (
     <Container>
-      <TopHeaderContainer>
-        <Logo link="https://github.com" />
-        <CustomInput
-          placeholder="Search or jump to..."
-          onPressEnter={onSearch}
-          style={{ marginLeft: "16px" }}
-        />
-        <LinksContainer>
-          {
-            topBannerLinks.map((item) => (
-              <a
-                key={item.name}
-                href={item.link}
-              >
-                {item.name}
-              </a>
-            ))
-          }
-        </LinksContainer>
-        <span>Right Side</span>
-      </TopHeaderContainer>
+      <Header onSearch={onSearch} />
+      <Panel onChange={(key) => { setTabKey(key); }} />
+      <Main tabKey={tabKey} />
     </Container>
   );
 };
