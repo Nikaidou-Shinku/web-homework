@@ -3,7 +3,7 @@ import { Avatar, Dropdown, Menu, Tag, Tooltip } from "antd";
 import { ItemType } from "antd/lib/menu/hooks/useItems";
 import { topBannerLinks, headerMoreList, SelfInfos, headerSelfList } from "../../../../data/global";
 import { Logo, MessageIcon, PlusIcon } from "../../../../components";
-import { CustomInput, HeaderContainer, LinksContainer, RightSideContainer } from "./styles";
+import { CustomInput, HeaderContainer, LinksContainer, LogoContainer, RightSideContainer } from "./styles";
 
 export interface IHeaderProps {
   onSearch: (content: string) => void;
@@ -76,7 +76,9 @@ export const Header = ({
 
   return (
     <HeaderContainer>
-      <Logo link="https://github.com" />
+      <LogoContainer>
+        <a href="https://github.com"><Logo /></a>
+      </LogoContainer>
       <CustomInput
         placeholder="Search or jump to..."
         onChange={(e) => { setContent(e.target.value); }}

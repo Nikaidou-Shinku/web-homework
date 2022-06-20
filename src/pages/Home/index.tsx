@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { message } from "antd";
-import { Header, Panel, Main } from "./components";
+import { Header, Panel, Main, Footer } from "./components";
 import { Container } from "./styles";
 
 export const Home = () => {
@@ -14,6 +14,7 @@ export const Home = () => {
       <Header onSearch={onSearch} />
       <Panel onChange={(key) => { setTabKey(key); }} />
       <Main tabKey={tabKey} />
+      <Footer />
     </Container>
   );
 };

@@ -20,6 +20,13 @@ export const ContentContainer = styled.div`
   flex: 3;
 
   display: flex;
+  flex-direction: column;
+
+  margin-left: 25px;
+
+  > *:not(:first-child) {
+    margin-top: 50px;
+  }
 `;
 
 export const MainAvatar = styled(Avatar)`
