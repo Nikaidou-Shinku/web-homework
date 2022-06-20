@@ -5,6 +5,8 @@ import { topBannerLinks, headerMoreList, SelfInfos, headerSelfList } from "../..
 import { Logo, MessageIcon, PlusIcon } from "../../../../components";
 import { CustomInput, HeaderContainer, LinksContainer, LogoContainer, RightSideContainer } from "./styles";
 
+import avatarUrl from "../../../../../favicon.png";
+
 export interface IHeaderProps {
   onSearch: (content: string) => void;
 }
@@ -124,7 +126,7 @@ export const Header = ({
           arrow={{ pointAtCenter: true }}
         >
           <a className="with-drop" href="#">
-            <Avatar src="/favicon.png" size={20} />
+            <Avatar src={avatarUrl} size={20} />
             <span className="down-arrow" />
           </a>
         </Dropdown>
