@@ -6,3 +6,4 @@ export { PackagesIcon } from "./PackagesIcon";
 export { StarsIcon } from "./StarsIcon";
 export { MessageIcon } from "./MessageIcon";
 export { PlusIcon } from "./PlusIcon";
+export { ForkIcon } from "./ForkIcon";

@@ -1,5 +1,6 @@
 import { Divider, Skeleton } from "antd";
 import { SelfInfos } from "../../../../data/global";
+import { Overview, Repositories, Projects, Packages, Stars } from "./components";
 import { ContentContainer, MainAvatar, MainContainer, NameTitle, SidebarContainer } from "./styles";
 
 import avatarUrl from "../../../../../favicon.png";
@@ -24,41 +25,11 @@ export const Main = ({
         <Skeleton />
       </SidebarContainer>
       <ContentContainer>
-        {tabKey === "Overview" && (
-          <>
-            <h1>Overview</h1>
-            <Skeleton />
-            <Skeleton />
-          </>
-        )}
-        {tabKey === "Repositories" && (
-          <>
-            <h1>Repositories</h1>
-            <Skeleton />
-            <Skeleton />
-          </>
-        )}
-        {tabKey === "Projects" && (
-          <>
-            <h1>Projects</h1>
-            <Skeleton />
-            <Skeleton />
-          </>
-        )}
-        {tabKey === "Packages" && (
-          <>
-            <h1>Packages</h1>
-            <Skeleton />
-            <Skeleton />
-          </>
-        )}
-        {tabKey === "Stars" && (
-          <>
-            <h1>Stars</h1>
-            <Skeleton />
-            <Skeleton />
-          </>
-        )}
+        {tabKey === "Overview" && <Overview />}
+        {tabKey === "Repositories" && <Repositories />}
+        {tabKey === "Projects" && <Projects />}
+        {tabKey === "Packages" && <Packages />}
+        {tabKey === "Stars" && <Stars />}
       </ContentContainer>
     </MainContainer>
   );

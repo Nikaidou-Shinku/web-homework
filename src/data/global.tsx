@@ -188,3 +188,48 @@ export const SelfInfos = {
   link: "https://yurzhang.com",
   twitter: "yurzhang"
 };
+
+export const LanguageColor = {
+  TypeScript: "#3178c6",
+  Rust: "#dea584",
+  Python: "#3572a5"
+};
+
+export interface IPinnedRepo {
+  name: string;
+  description: string;
+  language: keyof typeof LanguageColor;
+  stars: number;
+  forks: number;
+}
+
+export const PinnedRepos: IPinnedRepo[] = [
+  {
+    name: "PastePlz",
+    description: "A simple online pastebin.",
+    language: "TypeScript",
+    stars: 6,
+    forks: 0
+  },
+  {
+    name: "PastePlz-backend",
+    description: "The backend of PastePlz.",
+    language: "Rust",
+    stars: 1,
+    forks: 0
+  },
+  {
+    name: "Luogu-usercard",
+    description: "A plugin to decorate Luogu with exquisite user card.",
+    language: "TypeScript",
+    stars: 36,
+    forks: 4
+  },
+  {
+    name: "free-paint",
+    description: "自用洛谷冬日绘板作画脚本",
+    language: "Python",
+    stars: 2,
+    forks: 0
+  }
+];
